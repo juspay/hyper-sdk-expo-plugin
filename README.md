@@ -299,5 +299,5 @@ If your view dynamically computes height. Height can be obtained by adding the f
 
 ## License
 
-**hyper-sdk-expo-plugin** is distributed under [AGPL-3.0-only](https://github.com/juspay/hyper-sdk-expo-plugin/src/main/LICENSE.md) license.
+**hyper-sdk-expo-plugin** is distributed under [Apache 2.0](https://github.com/juspay/hyper-sdk-expo-plugin/src/main/LICENSE.md) license.
 
