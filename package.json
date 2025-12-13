@@ -1,6 +1,6 @@
 {
   "name": "hyper-sdk-expo-plugin",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "An Expo config plugin for automating Android & iOS integration changes for [`hyper-sdk-react`](https://www.npmjs.com/package/hyper-sdk-react) with apps using Expo.",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": "https://github.com/juspay/hyper-sdk-expo-plugin",
   "author": "Subhash Chandra <subhash.chandra@juspay.in> (https://www.juspay.in)",
-  "license": "AGPL-3.0-only",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/juspay/hyper-sdk-expo-plugin/issues"
   },
