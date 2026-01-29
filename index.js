@@ -37,19 +37,31 @@ const withHyperSDKAndroid = (config, { clientId, hyperSDKVersion, juspayMavenUrl
         );
       }
       if (!config.modResults.contents.includes("clientId =")) {
-        const modifyWithKey = (key, value) => {
+        const extBlockExists = /ext\s*\{/.test(config.modResults.contents);
+        let extContent = "";
+
+        const addToExt = (key, value) => {
           if (value) {
-            config.modResults.contents = config.modResults.contents.replace(
-              /ext {/,
-              `ext {
-        ${key} = "${value}"`
-            );
+            extContent += `\t\t${key} = "${value}"\n`;
           }
         }
-        modifyWithKey("clientId", clientId);
-        modifyWithKey("hyperSDKVersion", hyperSDKVersion);
-        modifyWithKey("excludedMicroSDKs", excludedMicroSDKs);
-        modifyWithKey("hyperAssetVersion", hyperAssetVersion);
+
+        addToExt("clientId", clientId);
+        addToExt("hyperSDKVersion", hyperSDKVersion);
+        addToExt("excludedMicroSDKs", excludedMicroSDKs);
+        addToExt("hyperAssetVersion", hyperAssetVersion);
+
+        if (extBlockExists) {
+          config.modResults.contents = config.modResults.contents.replace(
+            /ext {/,
+            `ext {\n${extContent}`
+          );
+        } else {
+          config.modResults.contents = config.modResults.contents.replace(
+            /buildscript\s*\{[\s\S]*?^\s*\}/m,
+            (match) => `${match}\n\text {\n${extContent}\t}`
+          );
+        }
       }
     }
     return config;
