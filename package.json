@@ -1,6 +1,6 @@
 {
   "name": "hyper-sdk-expo-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An Expo config plugin for automating Android & iOS integration changes for [`hyper-sdk-react`](https://www.npmjs.com/package/hyper-sdk-react) with apps using Expo.",
   "main": "index.js",
   "scripts": {
