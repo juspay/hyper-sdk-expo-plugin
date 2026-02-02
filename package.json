@@ -7,7 +7,10 @@
     "release": "release-it",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/juspay/hyper-sdk-expo-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juspay/hyper-sdk-expo-plugin"
+  },
   "author": "Subhash Chandra <subhash.chandra@juspay.in> (https://www.juspay.in)",
   "license": "Apache-2.0",
   "bugs": {
@@ -16,6 +19,9 @@
   "homepage": "https://github.com/juspay/hyper-sdk-expo-plugin#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
